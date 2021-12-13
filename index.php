@@ -48,7 +48,7 @@ include("./functions.php")
     </form>
 
     <br>
-    Møbel betræk:
+    Møbel Stel:
     <br>
     <?php
         if(isset($_POST['natur'])) {
@@ -91,18 +91,35 @@ include("./functions.php")
     </form>
 
     <form method="post">
-        <button type="submit" name="kurv">køb</button>
+        <button type="submit" name="kurv">Tilføj til Kurv</button>
     </form>
 
     <ul>
-        <!-- Her starter jeg mit loop -->
-        <?php foreach(getFromFile() as $i => $kurv) { ?>
+        <?php foreach(hentFraKurv() as $i => $kurv) { ?>
             <li>
                 <?php echo $kurv; ?>
-                <a href="?i=<?php echo $i; ?>">Slet</a>
+                <a href="?i=<?php echo $i; ?>">Noble 8900 <-- Slet</a>
             </li>
         <?php } ?>
     </ul>
+    <div>
+        <h3>
+    <?php
+        
+        if(array_key_exists('ordrebekræftelse', $_POST)) {
+            ordrebekræftelse();
+        }
+        function ordrebekræftelse() {
+            echo "TILLYKKE! Du har købt Noble 8900"; 
+
+        }
+    ?>
+        </h3>
+    <form method="post">
+        <input type="submit" name="ordrebekræftelse"
+                class="button" value="Køb" />
+          </form>
+    </div>
   </div>
 <div class="produkt_spec">
     <pre>
@@ -120,14 +137,6 @@ velpolstret taburet, fodskammel og bord – alt i et møbel.
     </pre>
 </div>
 </div>
- 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </p>
 </body>
 </html>

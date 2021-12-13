@@ -5,39 +5,39 @@ function addCost(int $a, $b) {
 ?>
 <?php
 if(isset($_POST["kurv"])) {
-    onSave();
+    gemMøbel();
 }
 
 if(isset($_GET['i'])) {
-    deleteItem($_GET['i']);
+    sletMøbel($_GET['i']);
 }
 ?>
 <?php
-function onSave() {
-    saveToFile($_POST['kurv']);
+function gemMøbel() {
+    gemTilKurv($_POST['kurv']);
 }
 
-function saveToFile($kurv) {
-    $notesArray = getFromFile();
-    $notesArray[] = $kurv;
-    $jsonNotes = json_encode($notesArray);
+function gemTilKurv($kurv) {
+    $listeKurv = hentFraKurv();
+    $listeKurv[] = $kurv;
+    $kurvJson = json_encode($listeKurv);
 
-    file_put_contents("./notes.json", $jsonNotes);
+    file_put_contents("./kurv.json", $kurvJson);
 }
 
-function getFromFile() {
-    $jsonNotes = file_get_contents("./notes.json");
-    $notesArray = json_decode($jsonNotes, true);
-    return $notesArray;
+function hentFraKurv() {
+    $kurvJson = file_get_contents("./kurv.json");
+    $listeKurv = json_decode($kurvJson, true);
+    return $listeKurv;
 }
 
-function deleteItem($index) {
-    $notesArray = getFromFile();
-    unset($notesArray[$index]);
+function sletMøbel($index) {
+    $listeKurv = hentFraKurv();
+    unset($listeKurv[$index]);
 
-    $jsonNotes = json_encode($notesArray);
+    $kurvJson = json_encode($listeKurv);
 
-    file_put_contents("./notes.json", $jsonNotes);
+    file_put_contents("./kurv.json", $kurvJson);
     header("Location: index.php");
 }
 ?>
