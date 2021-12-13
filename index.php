@@ -46,7 +46,7 @@ include("./functions.php")
     </form>
 
     <br>
-    Efter valgt betræk vælg nu stel
+    Møbel betræk:
     <br>
     <?php
         if(isset($_POST['natur'])) {
@@ -87,6 +87,20 @@ include("./functions.php")
                 value="(Skriv her)"/>
         <input type="submit">
     </form>
+
+    <form method="post">
+        <button type="submit" name="kurv">køb</button>
+    </form>
+
+    <ul>
+        <!-- Her starter jeg mit loop -->
+        <?php foreach(getFromFile() as $i => $kurv) { ?>
+            <li>
+                <?php echo $kurv; ?>
+                <a href="?i=<?php echo $i; ?>">Slet</a>
+            </li>
+        <?php } ?>
+    </ul>
   </div>
 <div class="produkt_spec">
     <pre>
