@@ -3,15 +3,27 @@ include("./functions.php")
 ?>
 <html>
 <head>
-<img src="Farstrup.png" width="200">
 <title>Farstrup Furniture</title>
 <link rel="stylesheet" href="styles.css"> 
-<body> 
- <h1>Nobel 8900</h1>
- <h2> Designet af Ole Tornøe Olesen</h2>
-<p>
-    <img src="nobel8900.png" width="300">   
+<body>
+<img src="Farstrup.png" width="200">
+<div class="content">
+    <div class="produkt_billede">
+    <img src="nobel8900.png" width="500">
+</div>
+<div class="produkt_info">
+<h2>Nobel 8900</h2>
+ <h3>Designet af Ole Tornøe Olesen</h3>
     <br>
+    <pre>
+    Nobels smukke, slanke og ædle udtryk passer til en indretning,
+    der værdsætter det enkle udtryk med fokus på materialer,
+    i bedste kvalitet.
+    Her er der nemlig tale om et produkt,
+    hvor der er kælet for detaljen. 
+    Træets åre står smukt frem og alle samlinger står snorlige 
+    – lavet til at holde i generationer. 
+    </pre>
     <br>
     Vejledende pris - <?php echo $a ?>
     <br>
@@ -75,6 +87,24 @@ include("./functions.php")
                 value="(Skriv her)"/>
         <input type="submit">
     </form>
+  </div>
+<div class="produkt_spec">
+    <pre>
+    <h4>Nobel 8900 med et personligt twist</h4>
+Farstrup har over 100 års erfaring med stoleproduktion 
+og med sloganet ”Fra stamme til stue”,
+ er vi stolte af at skabe lænestole,
+der både er dansk højkvalitet og giver komfort i særklasse.
+Skal boligindretningen fuldendes kan nyheden Tray Sit®
+sætte prikken over i’et med sit smukke enkle design 
+og sine mange nyttige funktioner.
+Et uundværligt multifunktionsmøbel, 
+der både byder på funktioner som bakke,
+velpolstret taburet, fodskammel og bord – alt i et møbel.
+    </pre>
+</div>
+</div>
+ 
     <br>
     <br>
     <br>
