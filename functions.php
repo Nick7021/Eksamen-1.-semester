@@ -14,7 +14,6 @@ if(isset($_GET['i'])) {
 ?>
 <?php
 function onSave() {
-    //print_r($_POST["note"]);
     saveToFile($_POST['kurv']);
 }
 

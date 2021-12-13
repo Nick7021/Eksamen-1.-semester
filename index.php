@@ -27,6 +27,8 @@ include("./functions.php")
     <br>
     Vejledende pris - <?php echo $a ?>
     <br>
+    <br>
+    Betræk
     <?php
         if(isset($_POST['læder'])) {
             echo 'Pris med læder betræk - ';
